@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Les Sauterelles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-sauterelles navbar-expand-lg scrolled">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-logo" href="index.html">
+      <div class="logo-circle">LS</div>
+      <div class="logo-text"><span data-lang="brand_name">Les Sauterelles</span><span data-lang="brand_sub">École Bilingue</span></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon" style="filter:none"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1 align-items-center">
+        <li class="nav-item">
+          <div class="language-switcher" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang-option="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang-option="en">EN</button>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html" style="color:var(--texte)!important" data-lang="home">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" style="color:var(--texte)!important" data-lang="about">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="sections.html" style="color:var(--texte)!important" data-lang="sections">Sections</a></li>
+        <li class="nav-item"><a class="nav-link" href="avantages.html" style="color:var(--texte)!important" data-lang="advantages">Avantages</a></li>
+        <li class="nav-item"><a class="nav-link" href="frais.html" style="color:var(--texte)!important" data-lang="school_fees">Frais & Inscription</a></li>
+        <li class="nav-item"><a class="nav-link" href="galerie.html" style="color:var(--texte)!important" data-lang="gallery">Galerie</a></li>
+        <li class="nav-item ms-2"><a class="btn-principal active" href="contact.html" data-lang="contact">Nous contacter</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="section-badge" data-lang="contact_hero_badge">Parlons ensemble</span>
+    <h1 data-lang="contact_title">Contactez-nous</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-sauterelles">
+        <li class="breadcrumb-item"><a href="index.html" style="color:rgba(255,255,255,0.6)" data-lang="home">Accueil</a></li>
+        <li class="breadcrumb-item active" data-lang="contact_page_label">Contact</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Infos de contact -->
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="contact-info-card">
+          <span class="section-badge" style="background:rgba(255,255,255,0.1);color:var(--or-light);border-color:rgba(255,255,255,0.2);" data-lang="contact_details_badge">
+            Coordonnées
+          </span>
+          <h3 style="color:white;font-family:var(--font-titre);margin:16px 0 28px;" data-lang="contact_info_title">
+            Nous sommes disponibles pour vous
+          </h3>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <h5 data-lang="contact_info_address">Adresse</h5>
+              <p data-lang-html="contact_address_details">Carrefour Ekoumdoum<br>Yaoundé, Cameroun</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <h5 data-lang="contact_info_phones">Téléphones</h5>
+              <p data-lang-html="contact_phone_numbers">(+237) 655 936 211<br>(+237) 695 413 438</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕗</div>
+            <div>
+              <h5 data-lang="contact_info_hours">Heures d'ouverture</h5>
+              <p data-lang-html="contact_hours">Lundi – Vendredi : 7h30 – 17h00<br>Samedi : 8h00 – 13h00</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <h5 data-lang="contact_info_email">Email</h5>
+              <p>contact@sauterelles-school.cm</p>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);">
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:12px;" data-lang="contact_follow_us">Suivez-nous</p>
+            <div class="footer-social">
+              <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de contact -->
+      <div class="col-lg-8" data-aos="fade-left">
+        <div style="background:white;border-radius:20px;padding:40px;box-shadow:var(--ombre);">
+          <span class="section-badge" data-lang="contact_form_badge">Formulaire</span>
+          <h2 class="section-titre mt-2 mb-2" data-lang="contact_form_heading">Envoyez-nous un message</h2>
+          <p style="color:var(--texte-light);margin-bottom:32px;font-size:0.92rem;" data-lang="contact_form_desc">
+            Remplissez le formulaire ci-dessous et l'école vous répondra dans les 24 heures.
+          </p>
+
+          <form id="form-contact" class="form-sauterelles" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nom" data-lang="contact_label_fullname">Nom complet *</label>
+                <input type="text" id="nom" name="nom" class="form-control"
+                       placeholder="Ex: Jean Dupont" data-lang-placeholder="contact_placeholder_name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" data-lang="contact_label_email">Adresse email *</label>
+                <input type="email" id="email" name="email" class="form-control"
+                       placeholder="Ex: jean@gmail.com" data-lang-placeholder="contact_placeholder_email" required>
+              </div>
+              <div class="col-md-6">
+                <label for="telephone" data-lang="contact_label_phone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control"
+                       placeholder="Ex: +237 6XX XXX XXX" data-lang-placeholder="contact_placeholder_phone">
+              </div>
+              <div class="col-md-6">
+                <label for="sujet" data-lang="contact_label_subject">Sujet *</label>
+                <select id="sujet" name="sujet" class="form-select" required>
+                  <option value="" disabled selected data-lang="contact_subject_default">Choisir un sujet</option>
+                  <option value="inscription" data-lang="contact_subject_inscription">Demande d'inscription</option>
+                  <option value="visite" data-lang="contact_subject_visit">Planifier une visite</option>
+                  <option value="frais" data-lang="contact_subject_fees">Renseignements sur les frais</option>
+                  <option value="autre" data-lang="contact_subject_other">Autre question</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="message" data-lang="contact_label_message">Votre message *</label>
+                <textarea id="message" name="message" class="form-control" rows="5"
+                          placeholder="Décrivez votre demande en détail..." data-lang-placeholder="contact_placeholder_message" required></textarea>
+              </div>
+              <div class="col-12" style="display:none;" aria-hidden="true">
+                <label for="website">Site web</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-principal w-100" style="border:none;font-size:1rem;">
+                  <i class="fas fa-paper-plane me-2"></i><span data-lang="contact_send_button">Envoyer le message</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte Google Maps -->
+    <div class="mt-5" data-aos="fade-up">
+      <h3 class="text-marron mb-3" style="font-family:var(--font-titre);" data-lang="our_location">
+        <i class="fas fa-map-marker-alt me-2" style="color:var(--or)"></i>Notre localisation
+      </h3>
+      <div style="border-radius:20px;overflow:hidden;box-shadow:var(--ombre);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.0!2d11.5174!3d3.8634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTEnNDguMiJOIDExwrAzMScwMi42IkU!5e0!3m2!1sfr!2scm!4v1234567890"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="navbar-brand-logo footer-brand mb-3">
+          <div class="logo-circle">LS</div>
+          <div class="logo-text"><span data-lang="brand_name">Les Sauterelles</span><span data-lang="brand_sub">École Bilingue</span></div>
+        </div>
+        <p data-lang="footer_text">Plus 22 ans d'excellence bilingue à Carrefour Ekoumdoum.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="contact.html" class="social-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5 data-lang="nav_title">Navigation</h5>
+        <ul class="footer-links">
+          <li><a href="index.html" data-lang="home">Accueil</a></li>
+          <li><a href="about.html" data-lang="about">À propos</a></li>
+          <li><a href="sections.html" data-lang="sections">Sections</a></li>
+          <li><a href="frais.html" data-lang="school_fees">Frais</a></li>
+          <li><a href="galerie.html" data-lang="gallery">Galerie</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h5 data-lang="sections_title">Sections</h5>
+        <ul class="footer-links">
+          <li><a href="sections.html" data-lang="maternelle_link">Maternelle Bilingue</a></li>
+          <li><a href="sections.html" data-lang="primaire_link">Primaire Bilingue</a></li>
+          <li><a href="frais.html" data-lang="fees_link">Inscription</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5 data-lang="contact_title">Contact</h5>
+        <ul class="footer-links">
+          <li><a href="#" data-lang="address">Carrefour Ekoumdoum</a></li>
+          <li><a href="tel:+237655936211">(+237) 655 936 211</a></li>
+          <li><a href="tel:+237695413438">(+237) 695 413 438</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span data-lang-html="copyright">© <span class="copyright-annee"></span> Groupe Scolaire Bilingue Les Sauterelles.</span>
+      <span data-lang="developer">Développé par Franck Le Prince</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
