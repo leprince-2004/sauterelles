@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css?v=chat-20260928" rel="stylesheet">
 </head>
 <body>
 
@@ -107,59 +107,41 @@
         </div>
       </div>
 
-      <!-- Formulaire de contact -->
+      <!-- Assistant d'information de l'école -->
       <div class="col-lg-8" data-aos="fade-left">
-        <div style="background:white;border-radius:20px;padding:40px;box-shadow:var(--ombre);">
-          <span class="section-badge" data-lang="contact_form_badge">Formulaire</span>
-          <h2 class="section-titre mt-2 mb-2" data-lang="contact_form_heading">Envoyez-nous un message</h2>
-          <p style="color:var(--texte-light);margin-bottom:32px;font-size:0.92rem;" data-lang="contact_form_desc">
-            Remplissez le formulaire ci-dessous et l'école vous répondra dans les 24 heures.
-          </p>
-
-           <form id="form-contact" class="form-sauterelles" method="POST" novalidate>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label for="nom" data-lang="contact_label_fullname">Nom complet *</label>
-                <input type="text" id="nom" name="nom" class="form-control"
-                       placeholder="Ex: Jean Dupont" data-lang-placeholder="contact_placeholder_name" required>
-              </div>
-              <div class="col-md-6">
-                <label for="email" data-lang="contact_label_email">Adresse email *</label>
-                <input type="email" id="email" name="email" class="form-control"
-                       placeholder="Ex: jean@gmail.com" data-lang-placeholder="contact_placeholder_email" required>
-              </div>
-              <div class="col-md-6">
-                <label for="telephone" data-lang="contact_label_phone">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" class="form-control"
-                       placeholder="Ex: +237 6XX XXX XXX" data-lang-placeholder="contact_placeholder_phone">
-              </div>
-              <div class="col-md-6">
-                <label for="sujet" data-lang="contact_label_subject">Sujet *</label>
-                <select id="sujet" name="sujet" class="form-select" required>
-                  <option value="" disabled selected data-lang="contact_subject_default">Choisir un sujet</option>
-                  <option value="inscription" data-lang="contact_subject_inscription">Demande d'inscription</option>
-                  <option value="visite" data-lang="contact_subject_visit">Planifier une visite</option>
-                  <option value="frais" data-lang="contact_subject_fees">Renseignements sur les frais</option>
-                  <option value="autre" data-lang="contact_subject_other">Autre question</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label for="message" data-lang="contact_label_message">Votre message *</label>
-                <textarea id="message" name="message" class="form-control" rows="5"
-                          placeholder="Décrivez votre demande en détail..." data-lang-placeholder="contact_placeholder_message" required></textarea>
-              </div>
-              <div class="col-12" style="display:none;" aria-hidden="true">
-                <label for="website">Site web</label>
-                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn-principal w-100" style="border:none;font-size:1rem;">
-                  <i class="fas fa-paper-plane me-2"></i><span data-lang="contact_send_button">Envoyer le message</span>
-                </button>
-              </div>
+        <section class="school-chat" aria-labelledby="school-chat-title">
+          <header class="school-chat-header">
+            <div class="school-chat-avatar" aria-hidden="true"><i class="fas fa-comments"></i></div>
+            <div class="school-chat-heading">
+              <span class="school-chat-eyebrow" data-lang="chat_badge">ASSISTANT D'INFORMATION</span>
+              <h2 id="school-chat-title" data-lang="chat_title">Une question sur l'école ?</h2>
+              <p><span class="school-chat-status" aria-hidden="true"></span><span data-lang="chat_scope">Disponible pour vous renseigner sur Les Sauterelles</span></p>
             </div>
+            <span class="school-chat-mark" aria-hidden="true">LS</span>
+          </header>
+
+          <div class="school-chat-messages" id="school-chat-messages" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Conversation avec l'assistant" data-lang-aria-label="chat_conversation_label">
+            <article class="chat-message chat-message-assistant">
+              <span class="chat-message-label" data-lang="chat_assistant_label">Les Sauterelles</span>
+              <p data-lang="chat_welcome">Bonjour ! Je peux vous renseigner sur les sections, les inscriptions, les frais et les coordonnées de l'école. Que souhaitez-vous savoir ?</p>
+            </article>
+          </div>
+
+          <div class="school-chat-suggestions" aria-label="Questions fréquentes" data-lang-aria-label="chat_faq_label">
+            <button type="button" class="chat-suggestion" data-chat-question data-lang="chat_suggestion_sections">Quelles sont les sections ?</button>
+            <button type="button" class="chat-suggestion" data-chat-question data-lang="chat_suggestion_registration">Comment inscrire mon enfant ?</button>
+            <button type="button" class="chat-suggestion" data-chat-question data-lang="chat_suggestion_location">Où se trouve l'école ?</button>
+          </div>
+
+          <form class="school-chat-composer" id="school-chat-form">
+            <label class="visually-hidden" for="school-chat-input" data-lang="chat_input_label">Votre question sur l'école</label>
+            <input id="school-chat-input" name="question" type="text" maxlength="350" autocomplete="off" data-lang-placeholder="chat_placeholder" placeholder="Écrivez votre question sur l'école…" required>
+            <button class="school-chat-send" type="submit" aria-label="Envoyer la question" data-lang-aria-label="chat_send_label">
+              <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </button>
           </form>
-        </div>
+          <p class="school-chat-note" data-lang="chat_note">Les réponses portent uniquement sur les informations de l'établissement.</p>
+        </section>
       </div>
     </div>
 
@@ -168,7 +150,7 @@
       <h3 class="text-marron mb-3" style="font-family:var(--font-titre);" data-lang="our_location">
         <i class="fas fa-map-marker-alt me-2" style="color:var(--or)"></i>Notre localisation
       </h3>
-      <div style="border-radius:20px;overflow:hidden;box-shadow:var(--ombre);">
+      <div id="school-map" style="border-radius:20px;overflow:hidden;box-shadow:var(--ombre);">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.0!2d11.5174!3d3.8634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTEnNDguMiJOIDExwrAzMScwMi42IkU!5e0!3m2!1sfr!2scm!4v1234567890"
           width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -232,6 +214,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=chat-20260928-3"></script>
 </body>
 </html>

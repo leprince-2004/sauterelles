@@ -76,24 +76,27 @@ document.addEventListener('DOMContentLoaded', function () {
     contact_hero_badge: "Parlons ensemble",
     contact_title: "Contactez-nous",
     contact_page_label: "Contact",
-    contact_form_badge: "Formulaire",
-    contact_form_heading: "Envoyez-nous un message",
-    contact_form_desc: "Remplissez le formulaire ci-dessous et l'école vous répondra dans les 24 heures.",
-    contact_label_fullname: "Nom complet *",
-    contact_placeholder_name: "Ex: Jean Dupont",
-    contact_label_email: "Adresse email *",
-    contact_placeholder_email: "Ex: jean@gmail.com",
-    contact_label_phone: "Téléphone",
-    contact_placeholder_phone: "Ex: +237 6XX XXX XXX",
-    contact_label_subject: "Sujet *",
-    contact_subject_default: "Choisir un sujet",
-    contact_subject_inscription: "Demande d'inscription",
-    contact_subject_visit: "Planifier une visite",
-    contact_subject_fees: "Renseignements sur les frais",
-    contact_subject_other: "Autre question",
-    contact_label_message: "Votre message *",
-    contact_placeholder_message: "Décrivez votre demande en détail...",
-    contact_send_button: "Envoyer le message",
+    chat_badge: "ASSISTANT D'INFORMATION",
+    chat_title: "Une question sur l'école ?",
+    chat_scope: "Disponible pour vous renseigner sur Les Sauterelles",
+    chat_assistant_label: "Les Sauterelles",
+    chat_welcome: "Bonjour ! Je peux vous renseigner sur les sections, les inscriptions, les frais et les coordonnées de l'école. Que souhaitez-vous savoir ?",
+    chat_suggestion_sections: "Quelles sont les sections ?",
+    chat_suggestion_registration: "Comment inscrire mon enfant ?",
+    chat_suggestion_location: "Où se trouve l'école ?",
+    chat_input_label: "Votre question sur l'école",
+    chat_conversation_label: "Conversation avec l'assistant",
+    chat_faq_label: "Questions fréquentes",
+    chat_placeholder: "Écrivez votre question sur l'école…",
+    chat_send_label: "Envoyer la question",
+    chat_note: "Les réponses portent uniquement sur les informations de l'établissement.",
+    chat_user_label: "Vous",
+    chat_out_of_scope: "Malheureusement, je n'ai pas assez d'informations pour répondre à cette question. Je réponds uniquement aux questions concernant le Groupe Scolaire Bilingue Les Sauterelles. Pour plus d'informations, contactez l'école à franckleprince15@gmail.com ou au (+237) 655 936 211 / (+237) 695 413 438.",
+    chat_no_answer: "Malheureusement, je n'ai pas assez d'informations à ce sujet. Pour plus d'informations, contactez l'école à franckleprince15@gmail.com ou au (+237) 655 936 211 / (+237) 695 413 438.",
+    chat_link_fees: "Voir les frais et modalités",
+    chat_link_registration: "Voir la page d'inscription",
+    chat_link_sections: "Découvrir les sections",
+    chat_link_contact: "Écrire à l'établissement",
     contact_info_address: "Adresse",
     contact_info_phones: "Téléphones",
     contact_info_hours: "Heures d'ouverture",
@@ -335,24 +338,27 @@ document.addEventListener('DOMContentLoaded', function () {
     contact_hero_badge: "Let's talk",
     contact_title: "Contact us",
     contact_page_label: "Contact",
-    contact_form_badge: "Form",
-    contact_form_heading: "Send us a message",
-    contact_form_desc: "Fill out the form below and the school will reply within 24 hours.",
-    contact_label_fullname: "Full name *",
-    contact_placeholder_name: "Ex: John Smith",
-    contact_label_email: "Email address *",
-    contact_placeholder_email: "Ex: john@gmail.com",
-    contact_label_phone: "Phone",
-    contact_placeholder_phone: "Ex: +237 6XX XXX XXX",
-    contact_label_subject: "Subject *",
-    contact_subject_default: "Choose a subject",
-    contact_subject_inscription: "Registration request",
-    contact_subject_visit: "Plan a visit",
-    contact_subject_fees: "Fees information",
-    contact_subject_other: "Other question",
-    contact_label_message: "Your message *",
-    contact_placeholder_message: "Describe your request in detail...",
-    contact_send_button: "Send message",
+    chat_badge: "SCHOOL INFORMATION ASSISTANT",
+    chat_title: "A question about the school?",
+    chat_scope: "Here to answer questions about Les Sauterelles",
+    chat_assistant_label: "Les Sauterelles",
+    chat_welcome: "Hello! I can answer questions about school sections, enrollment, fees and contact details. What would you like to know?",
+    chat_suggestion_sections: "What sections are available?",
+    chat_suggestion_registration: "How do I enroll my child?",
+    chat_suggestion_location: "Where is the school?",
+    chat_input_label: "Your question about the school",
+    chat_conversation_label: "Conversation with the assistant",
+    chat_faq_label: "Frequently asked questions",
+    chat_placeholder: "Ask a question about the school…",
+    chat_send_label: "Send question",
+    chat_note: "Answers are limited to information about the school.",
+    chat_user_label: "You",
+    chat_out_of_scope: "Unfortunately, I don't have enough information to answer that question. I can only answer questions about Les Sauterelles Bilingual School Group. For more information, contact the school at franckleprince15@gmail.com or (+237) 655 936 211 / (+237) 695 413 438.",
+    chat_no_answer: "Unfortunately, I don't have enough information about that. For more information, contact the school at franckleprince15@gmail.com or (+237) 655 936 211 / (+237) 695 413 438.",
+    chat_link_fees: "View fees and payment details",
+    chat_link_registration: "Open the enrollment page",
+    chat_link_sections: "Explore the school sections",
+    chat_link_contact: "Email the school",
     contact_info_address: "Address",
     contact_info_phones: "Phones",
     contact_info_hours: "Opening hours",
@@ -549,6 +555,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+    document.querySelectorAll('[data-lang-aria-label]').forEach(element => {
+      const key = element.dataset.langAriaLabel;
+      if (translations[safeLang][key]) {
+        element.setAttribute('aria-label', translations[safeLang][key]);
+      }
+    });
+
     const installmentMap = {
       [translations.fr.first_installment]: 'first_installment',
       [translations.fr.second_installment]: 'second_installment',
@@ -647,40 +660,151 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => toast.classList.remove('show'), 4000);
   };
 
-  /* ── 5. FORMULAIRE CONTACT ── */
-  const formContact = document.getElementById('form-contact');
-  if (formContact) {
-    formContact.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = this.querySelector('[type="submit"]');
-      btn.disabled = true;
-      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Envoi…';
+  /* ── 5. ASSISTANT D'INFORMATION ── */
+  const chatForm = document.getElementById('school-chat-form');
+  const chatMessages = document.getElementById('school-chat-messages');
+  const chatInput = document.getElementById('school-chat-input');
 
-      const data = new FormData(this);
+  if (chatForm && chatMessages && chatInput) {
+    const normalizeQuestion = value => value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9+\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
 
-      fetch('php/contact.php', { method: 'POST', body: data })
-      .then(r => {
-        if (!r.ok) {
-          throw new Error('HTTP ' + r.status);
-        }
-        return r.json();
-      })
-      .then(res => {
-        if (res.success) {
-          showToast('Message envoyé avec succès !');
-          formContact.reset();
-        } else {
-          showToast('Erreur : ' + (res.message || 'Erreur inconnue'));
-        }
-      })
-       .catch(error => {
-         console.error('Contact form error:', error);
-         showToast('Erreur de connexion. Réessayez plus tard.');
-       })
-        .finally(() => {
-          btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Envoyer le message';
-        });
+    const appendChatMessage = (text, sender, link) => {
+      const message = document.createElement('article');
+      message.className = `chat-message chat-message-${sender}`;
+
+      const label = document.createElement('span');
+      label.className = 'chat-message-label';
+      label.textContent = sender === 'user'
+        ? translations[document.documentElement.lang].chat_user_label
+        : translations[document.documentElement.lang].chat_assistant_label;
+
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      message.append(label, paragraph);
+
+      if (link) {
+        const action = document.createElement('a');
+        action.className = 'chat-answer-link';
+        action.href = link.href;
+        action.textContent = link.label;
+        message.appendChild(action);
+      }
+
+      chatMessages.appendChild(message);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const getSchoolAnswer = question => {
+      const text = normalizeQuestion(question);
+      const language = document.documentElement.lang === 'en' ? 'en' : 'fr';
+      const t = translations[language];
+      const has = (...terms) => terms.some(term => text.includes(term));
+
+      if (has('frais', 'cout', 'prix', 'tarif', 'paiement', 'fee', 'cost', 'price', 'tuition', 'payment')) {
+        return {
+          text: language === 'en'
+            ? 'The fees page lists registration fees and payment arrangements. Its published information refers to the 2024–2025 school year, so please contact the school to confirm current rates.'
+            : 'La page des frais présente les frais d’inscription et les modalités de paiement. Les informations publiées concernent l’année scolaire 2024–2025 ; contactez l’école pour confirmer les tarifs actuels.',
+          link: { href: 'frais.html', label: t.chat_link_fees }
+        };
+      }
+
+      if (has('inscription', 'inscrire', 'admission', 'dossier', 'enroll', 'enrollment', 'register', 'registration', 'admission')) {
+        return {
+          text: language === 'en'
+            ? 'The school has bilingual kindergarten and primary sections. The enrollment page lists the application details and lets you submit a request online.'
+            : 'L’établissement propose des sections maternelle et primaire bilingues. La page d’inscription présente les informations à fournir et permet de soumettre une demande en ligne.',
+          link: { href: 'inscription.html', label: t.chat_link_registration }
+        };
+      }
+
+      if (has('section', 'classe', 'niveau', 'maternelle', 'primaire', 'kindergarten', 'primary', 'grade', 'class', 'level', 'programme', 'curriculum', 'enseignement', 'teach', 'education')) {
+        return {
+          text: language === 'en'
+            ? 'The school offers bilingual kindergarten and primary education. The listed levels include Petite, Moyenne and Grande Section, and primary classes from SIL through CM2, with preparation for CEP and FSLC.'
+            : 'L’école propose une maternelle et un primaire bilingues. Les niveaux présentés comprennent les sections Petite, Moyenne et Grande, ainsi que le primaire du SIL au CM2, avec préparation au CEP et au FSLC.',
+          link: { href: 'sections.html', label: t.chat_link_sections }
+        };
+      }
+
+      if (has('adresse', 'situe', 'trouver', 'localisation', 'venir', 'where', 'address', 'located', 'location', 'directions')) {
+        return {
+          text: language === 'en'
+            ? 'The school is at Carrefour Ekoumdoum, Yaoundé, Cameroon.'
+            : 'L’école se trouve à Carrefour Ekoumdoum, à Yaoundé, au Cameroun.',
+          link: { href: '#school-map', label: language === 'en' ? 'View map' : 'Voir la carte' }
+        };
+      }
+
+      if (has('horaire', 'heure', 'ouverture', 'ouvert', 'opening', 'hours', 'schedule', 'time')) {
+        return {
+          text: language === 'en'
+            ? 'Opening hours listed on the website are Monday to Friday, 7:30 AM–5:00 PM, and Saturday, 8:00 AM–1:00 PM.'
+            : 'Les horaires affichés sur le site sont du lundi au vendredi, de 7h30 à 17h00, et le samedi, de 8h00 à 13h00.'
+        };
+      }
+
+      if (has('telephone', 'numero', 'appeler', 'phone', 'call', 'contact', 'email', 'courriel')) {
+        return {
+          text: language === 'en'
+            ? 'You can call (+237) 655 936 211 or (+237) 695 413 438, or email franckleprince15@gmail.com.'
+            : 'Vous pouvez appeler le (+237) 655 936 211 ou le (+237) 695 413 438, ou écrire à franckleprince15@gmail.com.',
+          link: { href: 'mailto:franckleprince15@gmail.com', label: t.chat_link_contact }
+        };
+      }
+
+      if (has('bilingue', 'langue', 'bilingual', 'language', 'cep', 'fslc', 'reussite', 'success', 'exam')) {
+        return {
+          text: language === 'en'
+            ? 'Les Sauterelles is a bilingual school. Its website says primary students are prepared for the CEP and FSLC and reports a 100% success rate since the school opened.'
+            : 'Les Sauterelles est une école bilingue. Le site indique que les élèves du primaire sont préparés au CEP et au FSLC, et annonce un taux de réussite de 100 % depuis l’ouverture de l’école.',
+          link: { href: 'about.html', label: language === 'en' ? 'About the school' : 'À propos de l’école' }
+        };
+      }
+
+      if (has('bus', 'transport', 'uniforme', 'uniform', 'remise', 'reduction', 'discount')) {
+        return {
+          text: language === 'en'
+            ? 'The advantages page mentions school transport and other family benefits. Please contact the school to confirm current availability and terms.'
+            : 'La page des avantages mentionne le transport scolaire et d’autres avantages pour les familles. Contactez l’école pour confirmer les disponibilités et conditions actuelles.',
+          link: { href: 'avantages.html', label: language === 'en' ? 'View school advantages' : 'Voir les avantages' }
+        };
+      }
+
+      if (has('bonjour', 'bonsoir', 'salut', 'hello', 'hi ', 'good morning', 'good afternoon')) {
+        return { text: t.chat_welcome };
+      }
+
+      if (has('ecole', 'etablissement', 'school', 'sauterelles')) {
+        return { text: t.chat_no_answer };
+      }
+
+      return { text: t.chat_out_of_scope };
+    };
+
+    const askQuestion = question => {
+      const cleanQuestion = question.trim();
+      if (!cleanQuestion) return;
+      appendChatMessage(cleanQuestion, 'user');
+      const answer = getSchoolAnswer(cleanQuestion);
+      appendChatMessage(answer.text, 'assistant', answer.link);
+    };
+
+    chatForm.addEventListener('submit', event => {
+      event.preventDefault();
+      askQuestion(chatInput.value);
+      chatInput.value = '';
+      chatInput.focus();
+    });
+
+    document.querySelectorAll('[data-chat-question]').forEach(button => {
+      button.addEventListener('click', () => askQuestion(button.textContent));
     });
   }
 
