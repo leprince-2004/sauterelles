@@ -177,47 +177,93 @@ document.addEventListener('DOMContentLoaded', function () {
     gallery_visit_text: "Vous souhaitez visiter l'école en personne ?",
     gallery_visit_button: "Planifier une visite",
 
-    // Fees page
-    school_year_badge: "Année scolaire 2024–2025",
-    fees_registration_title: "Frais d'inscription (à payer une seule fois)",
-    fees_section_title: "Frais d'inscription & Modalités de paiement",
-    fees_section_desc: "Paiement en <strong>3 tranches</strong> pour faciliter les familles. Tous les montants sont en <strong>FCFA</strong>.",
-    fees_payment_title: "Modalités de paiement par niveau",
-    fees_payment_text: "Les paiements se font en 3 tranches : <strong>1ère avant le 30/09/2024</strong> — <strong>2ème avant le 31/10/2024</strong> — <strong>3ème avant le 10/12/2024</strong>",
-    fees_card_title_maternelle_bilingue: "🌍 Maternelle Bilingue",
-    fees_card_title_maternelle: "🍼 Maternelle",
-    fees_card_title_sil_cm1: "📚 De la SIL au CM1",
-    fees_card_title_cm2: "🎓 CM2",
-    fees_card_title_primary_bilingual: "🌟 Primaire Bilingue",
-    first_installment: "1ère tranche",
-    second_installment: "2ème tranche",
-    third_installment: "3ème tranche",
-    annual_total: "TOTAL ANNUEL",
-    conditions_title: "Conditions d'admission",
-    birth_certificate_req: "<strong>Photocopie de l'acte de naissance</strong>",
-    birth_certificate_req_desc: "Document d'état civil obligatoire pour toute inscription.",
-    vaccination_record_req: "<strong>Photocopie du carnet de vaccination</strong>",
-    vaccination_record_req_desc: "Pour garantir la sécurité sanitaire de tous les élèves.",
-    paper_req: "<strong>01 rame de papier 80G</strong>",
-    paper_req_desc: "À apporter lors du dépôt du dossier d'inscription.",
-    folder_req: "<strong>02 chemises de classement</strong>",
-    folder_req_desc: "Obligatoires pour les élèves de <strong>Niveau II et Niveau III</strong>.",
-    binder_req: "<strong>02 classeurs</strong>",
-    binder_req_desc: "Obligatoires pour les élèves de <strong>Maternelle et Niveau I</strong>.",
-    financial_advantages_title: "Remises & Avantages financiers",
-    family_discount_title: "Remise familiale",
-    family_discount_desc: "Réduction de <strong>5 000 Fcfa</strong> par enfant à partir du 3ème enfant inscrit dans l'école.",
-    early_discount_title: "Remise anticipée",
-    early_discount_desc: "<strong>10% de réduction</strong> sur le total pour tout paiement effectué avant le 30 août 2024.",
-    free_uniform_title: "Uniforme gratuit",
-    free_uniform_desc: "La <strong>tenue de classe est offerte</strong> gratuitement à tous les élèves inscrits.",
-    fees_cta_question: "Des questions sur les frais ou le processus d'inscription ?",
-    fees_cta_email_button: "Nous écrire",
-    fees_cta_phone_button: "(+237) 655 936 211",
-    
-    // Divers
-    years_excellence: "ans d'excellence"
-  },
+     // Fees page
+     school_year_badge: "Année scolaire 2024–2025",
+     fees_registration_title: "Frais d'inscription (à payer une seule fois)",
+     fees_section_title: "Frais d'inscription & Modalités de paiement",
+     fees_section_desc: "Paiement en <strong>3 tranches</strong> pour faciliter les familles. Tous les montants sont en <strong>FCFA</strong>.",
+     fees_payment_title: "Modalités de paiement par niveau",
+     fees_payment_text: "Les paiements se font en 3 tranches : <strong>1ère avant le 30/09/2024</strong> — <strong>2ème avant le 31/10/2024</strong> — <strong>3ème avant le 10/12/2024</strong>",
+     fees_card_title_maternelle_bilingue: "🌍 Maternelle Bilingue",
+     fees_card_title_maternelle: "🍼 Maternelle",
+     fees_card_title_sil_cm1: "📚 De la SIL au CM1",
+     fees_card_title_cm2: "🎓 CM2",
+     fees_card_title_primary_bilingual: "🌟 Primaire Bilingue",
+     first_installment: "1ère tranche",
+     second_installment: "2ème tranche",
+     third_installment: "3ème tranche",
+     annual_total: "TOTAL ANNUEL",
+     conditions_title: "Conditions d'admission",
+     birth_certificate_req_desc: "Document d'état civil obligatoire pour toute inscription.",
+     vaccination_record_req_desc: "Pour garantir la sécurité sanitaire de tous les élèves.",
+     paper_req_desc: "À apporter lors du dépôt du dossier d'inscription.",
+     folder_req_desc: "Obligatoires pour les élèves de Niveau II et Niveau III.",
+     binder_req_desc: "Obligatoires pour les élèves de Maternelle et Niveau I.",
+     financial_advantages_title: "Remises & Avantages financiers",
+     family_discount_title: "Remise familiale",
+     family_discount_desc: "Réduction de <strong>5 000 Fcfa</strong> par enfant à partir du 3ème enfant inscrit dans l'école.",
+     early_discount_title: "Remise anticipée",
+     early_discount_desc: "<strong>10% de réduction</strong> sur le total pour tout paiement effectué avant le 30 août 2024.",
+     free_uniform_title: "Uniforme gratuit",
+     free_uniform_desc: "La <strong>tenue de classe est offerte</strong> gratuitement à tous les élèves inscrits.",
+      fees_cta_question: "Des questions sur les frais ou le processus d'inscription ?",
+      fees_cta_inscription_button: "S'inscrire maintenant",
+      fees_cta_email_button: "Nous écrire",
+      fees_cta_phone_button: "(+237) 655 936 211",
+      
+      // Inscription page
+     inscription: "Inscription",
+     inscription_hero_badge: "Nouvelle inscription",
+     inscription_title: "Inscription d'un élève",
+     inscription_page_label: "Inscription",
+     inscription_form_badge: "Formulaire d'inscription",
+     inscription_form_heading: "Inscrivez votre enfant",
+     inscription_form_desc: "Remplissez ce formulaire pour inscrire votre enfant. Les champs marqués * sont obligatoires.",
+     inscription_step1_title: "Informations de l'élève",
+     inscription_label_nom: "Nom de l'élève *",
+     inscription_placeholder_nom: "Ex: MOUKOUOP",
+     inscription_label_prenom: "Prénom de l'élève *",
+     inscription_placeholder_prenom: "Ex: Jean",
+     inscription_label_dob: "Date de naissance *",
+     inscription_label_sexe: "Sexe *",
+     inscription_sexe_default: "Sélectionner le sexe",
+     inscription_sexe_m: "Masculin",
+     inscription_sexe_f: "Féminin",
+     inscription_label_classe: "Classe souhaitée *",
+     inscription_classe_default: "Sélectionner une classe",
+     inscription_group_maternelle: "Maternelle",
+     inscription_group_primaire: "Primaire",
+     inscription_classe_mb: "Maternelle Bilingue",
+     inscription_classe_sil: "SIL (Starter Infant Level)",
+     inscription_classe_ps: "Petite Section",
+     inscription_classe_ms: "Moyenne Section",
+     inscription_classe_gs: "Grande Section",
+     inscription_classe_eb: "Éveil bilingue",
+     inscription_classe_sil_ce2: "SIL au CE II",
+     inscription_classe_cm1: "CM1",
+     inscription_classe_cm2: "CM2",
+     inscription_classe_pb: "Primaire Bilingue",
+     inscription_classe_cep: "CEP",
+     inscription_classe_fslc: "FSLC",
+     inscription_step2_title: "Informations du parent/tuteur",
+     inscription_label_parent: "Nom complet du parent/tuteur *",
+     inscription_placeholder_parent: "Ex: MOUKOUOP Marie",
+     inscription_label_phone: "Téléphone *",
+     inscription_placeholder_phone: "Ex: +237 6XX XXX XXX",
+     inscription_label_email: "Adresse email *",
+     inscription_placeholder_email: "Ex: parent@gmail.com",
+     inscription_label_adresse: "Adresse de résidence *",
+     inscription_placeholder_adresse: "Ex: Carrefour Ekoumdoum, Yaoundé",
+     inscription_step3_title: "Confirmation",
+     inscription_conditions_title: "Conditions d'admission",
+    inscription_confirm_text: "En soumettant ce formulaire, vous confirmez avoir pris connaissance des conditions d'admission.<br>Un administrateur vous contactera pour finaliser l'inscription.",
+     inscription_btn_prev: "Précédent",
+     inscription_btn_next: "Suivant",
+     inscription_btn_submit: "Soumettre l'inscription",
+     
+     // Divers
+     years_excellence: "ans d'excellence"
+   },
 
   en: {
     // Menu
@@ -407,16 +453,11 @@ document.addEventListener('DOMContentLoaded', function () {
     third_installment: "3rd installment",
     annual_total: "ANNUAL TOTAL",
     conditions_title: "Admission requirements",
-    birth_certificate_req: "<strong>Copy of birth certificate</strong>",
     birth_certificate_req_desc: "Required civil status document for any registration.",
-    vaccination_record_req: "<strong>Copy of vaccination record</strong>",
     vaccination_record_req_desc: "To guarantee the health safety of all students.",
-    paper_req: "<strong>1 ream of 80G paper</strong>",
     paper_req_desc: "To bring when submitting the registration file.",
-    folder_req: "<strong>2 classification folders</strong>",
-    folder_req_desc: "Required for students in <strong>Level II and Level III</strong>.",
-    binder_req: "<strong>2 binders</strong>",
-    binder_req_desc: "Required for students in <strong>Kindergarten and Level I</strong>.",
+    folder_req_desc: "Required for students in Level II and Level III.",
+    binder_req_desc: "Required for students in Kindergarten and Level I.",
     financial_advantages_title: "Discounts & financial benefits",
     family_discount_title: "Family discount",
     family_discount_desc: "5,000 FCFA discount per child from the third enrolled child in the school.",
@@ -425,9 +466,60 @@ document.addEventListener('DOMContentLoaded', function () {
     free_uniform_title: "Free uniform",
     free_uniform_desc: "<strong>School uniform is offered</strong> free of charge to all enrolled students.",
     fees_cta_question: "Questions about fees or registration?",
+    fees_cta_inscription_button: "Register now",
     fees_cta_email_button: "Write to us",
     fees_cta_phone_button: "(+237) 655 936 211",
 
+    // Inscription page
+    inscription: "Registration",
+    inscription_hero_badge: "New registration",
+    inscription_title: "Student registration",
+    inscription_page_label: "Registration",
+    inscription_form_badge: "Registration form",
+    inscription_form_heading: "Register your child",
+    inscription_form_desc: "Fill out this form to register your child. Fields marked * are required.",
+    inscription_step1_title: "Student information",
+    inscription_label_nom: "Student's last name *",
+    inscription_placeholder_nom: "Ex: MOUKOUOP",
+    inscription_label_prenom: "Student's first name *",
+    inscription_placeholder_prenom: "Ex: Jean",
+    inscription_label_dob: "Date of birth *",
+    inscription_label_sexe: "Gender *",
+    inscription_sexe_default: "Select gender",
+    inscription_sexe_m: "Male",
+    inscription_sexe_f: "Female",
+    inscription_label_classe: "Desired class *",
+    inscription_classe_default: "Select a class",
+    inscription_group_maternelle: "Kindergarten",
+    inscription_group_primaire: "Primary",
+    inscription_classe_mb: "Bilingual Kindergarten",
+    inscription_classe_sil: "SIL (Starter Infant Level)",
+    inscription_classe_ps: "Petite Section",
+    inscription_classe_ms: "Moyenne Section",
+    inscription_classe_gs: "Grande Section",
+    inscription_classe_eb: "Bilingual Awakening",
+    inscription_classe_sil_ce2: "SIL to CE II",
+    inscription_classe_cm1: "CM1",
+    inscription_classe_cm2: "CM2",
+    inscription_classe_pb: "Bilingual Primary",
+    inscription_classe_cep: "CEP",
+    inscription_classe_fslc: "FSLC",
+    inscription_step2_title: "Parent/Guardian information",
+    inscription_label_parent: "Parent/Guardian full name *",
+    inscription_placeholder_parent: "Ex: MOUKOUOP Marie",
+    inscription_label_phone: "Phone *",
+    inscription_placeholder_phone: "Ex: +237 6XX XXX XXX",
+    inscription_label_email: "Email address *",
+    inscription_placeholder_email: "Ex: parent@gmail.com",
+    inscription_label_adresse: "Residence address *",
+    inscription_placeholder_adresse: "Ex: Carrefour Ekoumdoum, Yaoundé",
+    inscription_step3_title: "Confirmation",
+    inscription_conditions_title: "Admission requirements",
+    inscription_confirm_text: "By submitting this form, you confirm that you have read the admission requirements. An administrator will contact you to finalize the registration.",
+    inscription_btn_prev: "Previous",
+    inscription_btn_next: "Next",
+    inscription_btn_submit: "Submit registration",
+    
     // Divers
     years_excellence: "years of excellence"
   }};
@@ -484,6 +576,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const isActive = button.getAttribute('data-lang-option') === safeLang;
       button.classList.toggle('active', isActive);
       button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+
+    // Traduire les optgroup
+    document.querySelectorAll('optgroup[data-lang]').forEach(optgroup => {
+      const key = optgroup.getAttribute('data-lang');
+      if (translations[safeLang][key]) {
+        optgroup.label = translations[safeLang][key];
+      }
     });
   }
 
@@ -559,16 +659,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = new FormData(this);
 
       fetch('php/contact.php', { method: 'POST', body: data })
-        .then(r => r.json())
-        .then(res => {
-          if (res.success) {
-            showToast('Message envoyé avec succès !');
-            formContact.reset();
-          } else {
-            showToast('Erreur : ' + res.message);
-          }
-        })
-        .catch(() => showToast('Erreur de connexion. Réessayez.'))
+      .then(r => {
+        if (!r.ok) {
+          throw new Error('HTTP ' + r.status);
+        }
+        return r.json();
+      })
+      .then(res => {
+        if (res.success) {
+          showToast('Message envoyé avec succès !');
+          formContact.reset();
+        } else {
+          showToast('Erreur : ' + (res.message || 'Erreur inconnue'));
+        }
+      })
+       .catch(error => {
+         console.error('Contact form error:', error);
+         showToast('Erreur de connexion. Réessayez plus tard.');
+       })
         .finally(() => {
           btn.disabled = false;
           btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Envoyer le message';

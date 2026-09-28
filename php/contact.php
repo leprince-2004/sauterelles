@@ -10,102 +10,230 @@ header('Content-Type: application/json; charset=utf-8');
 function sendJsonResponse(bool $success, string $message, array $extra = []): void
 {
     echo json_encode(array_merge([
-        'success' => $success,
-        'message' => $message,
-    ], $extra));
+        "success"=>$success,
+        "message"=>$message
+    ],$extra));
+
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    sendJsonResponse(false, 'Méthode non autorisée.');
+
+/*====================================
+Méthode
+=====================================*/
+
+if($_SERVER["REQUEST_METHOD"]!=="POST"){
+    sendJsonResponse(false,"Méthode non autorisée.");
 }
 
-$nom = trim((string) ($_POST['nom'] ?? ''));
-$email = trim((string) ($_POST['email'] ?? ''));
-$telephone = trim((string) ($_POST['telephone'] ?? ''));
-$sujet = trim((string) ($_POST['sujet'] ?? ''));
-$message = trim((string) ($_POST['message'] ?? ''));
-$honeypot = trim((string) ($_POST['website'] ?? ''));
 
-if (!empty($honeypot)) {
-    sendJsonResponse(false, 'Le formulaire a été rejeté comme message automatisé.');
+/*====================================
+Anti Bot
+=====================================*/
+
+$honeypot=trim($_POST["website"]??"");
+
+if($honeypot!==""){
+    sendJsonResponse(false,"Message refusé.");
 }
 
-if (!empty($_SESSION['contact_last_submit']) && (time() - (int) $_SESSION['contact_last_submit']) < 30) {
-    sendJsonResponse(false, 'Merci de patienter 30 secondes avant un nouveau message.');
+
+/*====================================
+Anti Spam
+=====================================*/
+
+if(
+    isset($_SESSION["contact_last_submit"]) &&
+    time()-$_SESSION["contact_last_submit"]<30
+){
+    sendJsonResponse(false,"Veuillez patienter 30 secondes.");
 }
 
-if (mb_strlen($nom) < 2 || mb_strlen($nom) > 100) {
-    sendJsonResponse(false, 'Veuillez renseigner un nom valide.');
+
+/*====================================
+Récupération
+=====================================*/
+
+$nom=trim($_POST["nom"]??"");
+$email=trim($_POST["email"]??"");
+$telephone=trim($_POST["telephone"]??"");
+$sujet=trim($_POST["sujet"]??"");
+$message=trim($_POST["message"]??"");
+
+
+/*====================================
+Validation
+=====================================*/
+
+if(strlen($nom)<2){
+
+    sendJsonResponse(false,"Nom invalide.");
+
 }
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    sendJsonResponse(false, 'Veuillez renseigner une adresse email valide.');
+if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+
+    sendJsonResponse(false,"Email invalide.");
+
 }
 
-if ($telephone !== '' && !preg_match('/^[0-9+().\s-]{7,20}$/', $telephone)) {
-    sendJsonResponse(false, 'Veuillez renseigner un numéro de téléphone valide.');
+if(
+    $telephone!="" &&
+    !preg_match('/^[0-9+().\s-]{7,20}$/',$telephone)
+){
+
+    sendJsonResponse(false,"Téléphone invalide.");
+
 }
 
-$allowedSubjects = ['inscription', 'visite', 'frais', 'autre'];
-if (!in_array($sujet, $allowedSubjects, true)) {
-    sendJsonResponse(false, 'Sujet invalide.');
+if(strlen($message)<10){
+
+    sendJsonResponse(false,"Message trop court.");
+
 }
 
-if (mb_strlen($message) < 10 || mb_strlen($message) > 2000) {
-    sendJsonResponse(false, 'Votre message doit contenir entre 10 et 2000 caractères.');
+
+/*====================================
+Base de données
+=====================================*/
+
+try{
+
+$connection=getDbConnection();
+
+
+$stmt=$connection->prepare("
+INSERT INTO contacts
+(
+nom,
+email,
+telephone,
+sujet,
+message
+)
+VALUES
+(
+?,?,?,?,?
+)
+");
+
+$stmt->bind_param(
+"sssss",
+$nom,
+$email,
+$telephone,
+$sujet,
+$message
+);
+
+$stmt->execute();
+
+$contactId=$stmt->insert_id;
+
+$stmt->close();
+
+
+/*====================================
+Journal d'activité
+=====================================*/
+
+$ip=$_SERVER["REMOTE_ADDR"]??"";
+
+$action="Nouveau message de contact";
+
+$details="Message envoyé par ".$nom;
+
+$log=$connection->prepare("
+INSERT INTO journal_activites
+(
+utilisateur,
+action,
+details,
+adresse_ip
+)
+VALUES
+(
+?,?,?,?
+)
+");
+
+$log->bind_param(
+"ssss",
+$email,
+$action,
+$details,
+$ip
+);
+
+$log->execute();
+
+$log->close();
+
+
+$_SESSION["contact_last_submit"]=time();
+
+
+/*====================================
+Notification Email
+=====================================*/
+
+$to="franckleprince15@gmail.com";
+
+$subject="Nouveau message - Les Sauterelles";
+
+$body="
+
+Nom : $nom
+
+Email : $email
+
+Téléphone : $telephone
+
+Sujet : $sujet
+
+Message :
+
+$message
+
+";
+
+
+@mail(
+$to,
+$subject,
+$body,
+"From:noreply@lessauterelles.com\r\nReply-To:$email"
+);
+
+
+sendJsonResponse(
+
+true,
+
+"Votre message a bien été envoyé.",
+
+[
+"id"=>$contactId
+]
+
+);
+
+
 }
-
-try {
-    $connection = getDbConnection();
-
-    $stmt = $connection->prepare(
-        'INSERT INTO contacts (nom, email, telephone, sujet, message) VALUES (?, ?, ?, ?, ?)'
-    );
-    $stmt->bind_param('sssss', $nom, $email, $telephone, $sujet, $message);
-    $stmt->execute();
-    $stmt->close();
-
-    $_SESSION['contact_last_submit'] = time();
-
-    $to = getenv('MAIL_TO') ?: 'ecole@lessauterelles.com';
-    $subject = 'Nouveau message de contact - Les Sauterelles';
-    $body = "Nom : {$nom}\nEmail : {$email}\nTéléphone : {$telephone}\nSujet : {$sujet}\n\nMessage :\n{$message}";
-
-    $emailSent = false;
-
-    if (class_exists('PHPMailer\\PHPMailer\\PHPMailer')) {
-        require_once __DIR__ . '/../vendor/autoload.php';
-
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host = getenv('SMTP_HOST') ?: 'localhost';
-        $mail->Port = (int) (getenv('SMTP_PORT') ?: 1025);
-        $mail->SMTPAuth = false;
-        $mail->setFrom(getenv('SMTP_FROM') ?: 'noreply@lessauterelles.com', 'Site Les Sauterelles');
-        $mail->addAddress($to, 'École Les Sauterelles');
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->AltBody = strip_tags($body);
-
-        try {
-            $mail->send();
-            $emailSent = true;
-        } catch (Exception $exception) {
-            $emailSent = false;
-        }
-    } else {
-        $emailSent = @mail($to, $subject, $body, "From: noreply@lessauterelles.com\r\nReply-To: {$email}");
-    }
-
-    if ($emailSent) {
-        sendJsonResponse(true, 'Votre message a bien été envoyé et enregistré.');
-    }
-
-    sendJsonResponse(true, 'Votre message a bien été enregistré. L’email de notification n’a pas pu être envoyé depuis cette configuration locale.', [
-        'email_sent' => false,
-    ]);
-} catch (Throwable $exception) {
-    sendJsonResponse(false, 'Une erreur est survenue lors de l’enregistrement du message.');
+catch(mysqli_sql_exception $e){
+    error_log($e->getMessage());
+    sendJsonResponse(false, "Erreur de base de données : " . $e->getMessage());
 }
-?>
+catch(Throwable $e){
+
+error_log($e->getMessage());
+
+sendJsonResponse(
+
+false,
+
+"Une erreur est survenue."
+
+);
+
+}
