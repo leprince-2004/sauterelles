@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
     about: "À propos",
     sections: "Sections",
     advantages: "Avantages",
-    school_fees: "Frais & Inscription",
+    school_fees: "Frais scolaires",
     gallery: "Galerie",
     contact: "Nous contacter",
     contact_page_label: "Contact",
     sections_page_label: "Sections",
     advantages_page_label: "Avantages",
-    fees_page_label: "Frais & Inscription",
+    fees_page_label: "Frais scolaires",
     gallery_page_label: "Galerie",
     
     // Hero
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     advantages_hero_badge: "Ce qui nous distingue",
     advantages_title: "Nos Avantages",
     fees_hero_badge: "Transparence totale",
-    fees_title: "Frais & Inscription",
+    fees_title: "Frais scolaires",
     gallery_hero_badge: "Vie scolaire",
     gallery_title: "Notre Galerie",
     
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sections_title: "Sections",
     maternelle_link: "Maternelle Bilingue",
     primaire_link: "Primaire Bilingue",
-    fees_link: "Frais & Inscription",
+    fees_link: "Frais scolaires",
     contact_title: "Contact",
     contact_link: "Nous écrire",
     address: "Carrefour Ekoumdoum",
@@ -80,9 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chat_title: "Une question sur l'école ?",
     chat_scope: "Disponible pour vous renseigner sur Les Sauterelles",
     chat_assistant_label: "Les Sauterelles",
-    chat_welcome: "Bonjour ! Je peux vous renseigner sur les sections, les inscriptions, les frais et les coordonnées de l'école. Que souhaitez-vous savoir ?",
+    chat_welcome: "Bonjour ! Je peux vous renseigner sur les sections, les frais, les démarches d'admission et les coordonnées de l'école. Que souhaitez-vous savoir ?",
     chat_suggestion_sections: "Quelles sont les sections ?",
-    chat_suggestion_registration: "Comment inscrire mon enfant ?",
     chat_suggestion_location: "Où se trouve l'école ?",
     chat_input_label: "Votre question sur l'école",
     chat_conversation_label: "Conversation avec l'assistant",
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     chat_out_of_scope: "Malheureusement, je n'ai pas assez d'informations pour répondre à cette question. Je réponds uniquement aux questions concernant le Groupe Scolaire Bilingue Les Sauterelles. Pour plus d'informations, contactez l'école à franckleprince15@gmail.com ou au (+237) 655 936 211 / (+237) 695 413 438.",
     chat_no_answer: "Malheureusement, je n'ai pas assez d'informations à ce sujet. Pour plus d'informations, contactez l'école à franckleprince15@gmail.com ou au (+237) 655 936 211 / (+237) 695 413 438.",
     chat_link_fees: "Voir les frais et modalités",
-    chat_link_registration: "Voir la page d'inscription",
     chat_link_sections: "Découvrir les sections",
     chat_link_contact: "Écrire à l'établissement",
     contact_info_address: "Adresse",
@@ -140,9 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
     success_text: "Au CEP et FSLC depuis notre ouverture. Une performance jamais interrompue en 22 ans.",
     primary_fees_button: "Voir les frais primaire",
     cta_badge: "Prêt à rejoindre l'école ?",
-    cta_title: "Inscrivez votre enfant dès aujourd'hui",
+    cta_title: "Découvrez notre école",
     cta_description: "Contactez-nous pour obtenir plus d'informations ou pour planifier une visite de l'école.",
-    cta_fees_button: "Voir les frais & inscription",
+    cta_fees_button: "Voir les frais",
     cta_contact_button: "Nous contacter",
 
     // Advantages page
@@ -163,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
     performance_title: "Performance historique",
     performance_heading: "100% de réussite aux examens officiels",
     performance_text: "Depuis l'ouverture de l'école, chaque candidat au CEP et au FSLC a réussi son examen. Un record jamais interrompu depuis 22 ans.",
-    enroll_button: "Inscrire mon enfant",
 
     // Gallery page
     gallery_subtitle: "Photos & Moments",
@@ -182,8 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
      // Fees page
      school_year_badge: "Année scolaire 2024–2025",
-     fees_registration_title: "Frais d'inscription (à payer une seule fois)",
-     fees_section_title: "Frais d'inscription & Modalités de paiement",
+    fees_registration_title: "Frais d'admission (à payer une seule fois)",
+    fees_section_title: "Frais scolaires & modalités de paiement",
      fees_section_desc: "Paiement en <strong>3 tranches</strong> pour faciliter les familles. Tous les montants sont en <strong>FCFA</strong>.",
      fees_payment_title: "Modalités de paiement par niveau",
      fees_payment_text: "Les paiements se font en 3 tranches : <strong>1ère avant le 30/09/2024</strong> — <strong>2ème avant le 31/10/2024</strong> — <strong>3ème avant le 10/12/2024</strong>",
@@ -197,9 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
      third_installment: "3ème tranche",
      annual_total: "TOTAL ANNUEL",
      conditions_title: "Conditions d'admission",
-     birth_certificate_req_desc: "Document d'état civil obligatoire pour toute inscription.",
+    birth_certificate_req_desc: "Document d'état civil demandé pour l'admission.",
      vaccination_record_req_desc: "Pour garantir la sécurité sanitaire de tous les élèves.",
-     paper_req_desc: "À apporter lors du dépôt du dossier d'inscription.",
+    paper_req_desc: "À apporter lors du dépôt du dossier d'admission.",
      folder_req_desc: "Obligatoires pour les élèves de Niveau II et Niveau III.",
      binder_req_desc: "Obligatoires pour les élèves de Maternelle et Niveau I.",
      financial_advantages_title: "Remises & Avantages financiers",
@@ -209,61 +206,10 @@ document.addEventListener('DOMContentLoaded', function () {
      early_discount_desc: "<strong>10% de réduction</strong> sur le total pour tout paiement effectué avant le 30 août 2024.",
      free_uniform_title: "Uniforme gratuit",
      free_uniform_desc: "La <strong>tenue de classe est offerte</strong> gratuitement à tous les élèves inscrits.",
-      fees_cta_question: "Des questions sur les frais ou le processus d'inscription ?",
-      fees_cta_inscription_button: "S'inscrire maintenant",
+      fees_cta_question: "Des questions sur les frais ?",
       fees_cta_email_button: "Nous écrire",
       fees_cta_phone_button: "(+237) 655 936 211",
       
-      // Inscription page
-     inscription: "Inscription",
-     inscription_hero_badge: "Nouvelle inscription",
-     inscription_title: "Inscription d'un élève",
-     inscription_page_label: "Inscription",
-     inscription_form_badge: "Formulaire d'inscription",
-     inscription_form_heading: "Inscrivez votre enfant",
-     inscription_form_desc: "Remplissez ce formulaire pour inscrire votre enfant. Les champs marqués * sont obligatoires.",
-     inscription_step1_title: "Informations de l'élève",
-     inscription_label_nom: "Nom de l'élève *",
-     inscription_placeholder_nom: "Ex: MOUKOUOP",
-     inscription_label_prenom: "Prénom de l'élève *",
-     inscription_placeholder_prenom: "Ex: Jean",
-     inscription_label_dob: "Date de naissance *",
-     inscription_label_sexe: "Sexe *",
-     inscription_sexe_default: "Sélectionner le sexe",
-     inscription_sexe_m: "Masculin",
-     inscription_sexe_f: "Féminin",
-     inscription_label_classe: "Classe souhaitée *",
-     inscription_classe_default: "Sélectionner une classe",
-     inscription_group_maternelle: "Maternelle",
-     inscription_group_primaire: "Primaire",
-     inscription_classe_mb: "Maternelle Bilingue",
-     inscription_classe_sil: "SIL (Starter Infant Level)",
-     inscription_classe_ps: "Petite Section",
-     inscription_classe_ms: "Moyenne Section",
-     inscription_classe_gs: "Grande Section",
-     inscription_classe_eb: "Éveil bilingue",
-     inscription_classe_sil_ce2: "SIL au CE II",
-     inscription_classe_cm1: "CM1",
-     inscription_classe_cm2: "CM2",
-     inscription_classe_pb: "Primaire Bilingue",
-     inscription_classe_cep: "CEP",
-     inscription_classe_fslc: "FSLC",
-     inscription_step2_title: "Informations du parent/tuteur",
-     inscription_label_parent: "Nom complet du parent/tuteur *",
-     inscription_placeholder_parent: "Ex: MOUKOUOP Marie",
-     inscription_label_phone: "Téléphone *",
-     inscription_placeholder_phone: "Ex: +237 6XX XXX XXX",
-     inscription_label_email: "Adresse email *",
-     inscription_placeholder_email: "Ex: parent@gmail.com",
-     inscription_label_adresse: "Adresse de résidence *",
-     inscription_placeholder_adresse: "Ex: Carrefour Ekoumdoum, Yaoundé",
-     inscription_step3_title: "Confirmation",
-     inscription_conditions_title: "Conditions d'admission",
-    inscription_confirm_text: "En soumettant ce formulaire, vous confirmez avoir pris connaissance des conditions d'admission.<br>Un administrateur vous contactera pour finaliser l'inscription.",
-     inscription_btn_prev: "Précédent",
-     inscription_btn_next: "Suivant",
-     inscription_btn_submit: "Soumettre l'inscription",
-     
      // Divers
      years_excellence: "ans d'excellence"
    },
@@ -274,13 +220,13 @@ document.addEventListener('DOMContentLoaded', function () {
     about: "About Us",
     sections: "Sections",
     advantages: "Advantages",
-    school_fees: "Fees & Registration",
+    school_fees: "School fees",
     gallery: "Gallery",
     contact: "Contact Us",
     contact_page_label: "Contact",
     sections_page_label: "Sections",
     advantages_page_label: "Advantages",
-    fees_page_label: "Fees & Registration",
+    fees_page_label: "School fees",
     gallery_page_label: "Gallery",
     
     // Hero
@@ -293,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     advantages_hero_badge: "What sets us apart",
     advantages_title: "Our Advantages",
     fees_hero_badge: "Full transparency",
-    fees_title: "Fees & Registration",
+    fees_title: "School fees",
     gallery_hero_badge: "School life",
     gallery_title: "Our Gallery",
     
@@ -327,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sections_title: "Sections",
     maternelle_link: "Bilingual Kindergarten",
     primaire_link: "Bilingual Primary",
-    fees_link: "Fees & Registration",
+    fees_link: "School fees",
     contact_title: "Contact",
     contact_link: "Write to us",
     address: "Carrefour Ekoumdoum",
@@ -342,9 +288,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chat_title: "A question about the school?",
     chat_scope: "Here to answer questions about Les Sauterelles",
     chat_assistant_label: "Les Sauterelles",
-    chat_welcome: "Hello! I can answer questions about school sections, enrollment, fees and contact details. What would you like to know?",
+    chat_welcome: "Hello! I can answer questions about school sections, fees, admission steps and contact details. What would you like to know?",
     chat_suggestion_sections: "What sections are available?",
-    chat_suggestion_registration: "How do I enroll my child?",
     chat_suggestion_location: "Where is the school?",
     chat_input_label: "Your question about the school",
     chat_conversation_label: "Conversation with the assistant",
@@ -356,7 +301,6 @@ document.addEventListener('DOMContentLoaded', function () {
     chat_out_of_scope: "Unfortunately, I don't have enough information to answer that question. I can only answer questions about Les Sauterelles Bilingual School Group. For more information, contact the school at franckleprince15@gmail.com or (+237) 655 936 211 / (+237) 695 413 438.",
     chat_no_answer: "Unfortunately, I don't have enough information about that. For more information, contact the school at franckleprince15@gmail.com or (+237) 655 936 211 / (+237) 695 413 438.",
     chat_link_fees: "View fees and payment details",
-    chat_link_registration: "Open the enrollment page",
     chat_link_sections: "Explore the school sections",
     chat_link_contact: "Email the school",
     contact_info_address: "Address",
@@ -402,9 +346,9 @@ document.addEventListener('DOMContentLoaded', function () {
     success_text: "In CEP and FSLC since our opening. A performance never interrupted in 22 years.",
     primary_fees_button: "View primary fees",
     cta_badge: "Ready to join the school?",
-    cta_title: "Register your child today",
+    cta_title: "Discover our school",
     cta_description: "Contact us for more information or to schedule a school visit.",
-    cta_fees_button: "View fees & registration",
+    cta_fees_button: "View fees",
     cta_contact_button: "Contact us",
 
     // Advantages page
@@ -425,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function () {
     performance_title: "Historic performance",
     performance_heading: "100% success in official exams",
     performance_text: "Since the school's opening, every CEP and FSLC candidate has passed their exam. A record never interrupted in 22 years.",
-    enroll_button: "Enroll my child",
 
     // Gallery page
     gallery_subtitle: "Photos & Moments",
@@ -444,8 +387,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fees page
     school_year_badge: "School year 2024–2025",
-    fees_registration_title: "Registration fees (to be paid once)",
-    fees_section_title: "Registration fees & payment terms",
+    fees_registration_title: "One-time admission fees",
+    fees_section_title: "School fees & payment terms",
     fees_section_desc: "Payment in <strong>3 installments</strong> to help families. All amounts are in <strong>FCFA</strong>.",
     fees_payment_title: "Payment terms by level",
     fees_payment_text: "Payments are made in 3 installments: <strong>1st before 09/30/2024</strong> — <strong>2nd before 10/31/2024</strong> — <strong>3rd before 12/10/2024</strong>",
@@ -459,9 +402,9 @@ document.addEventListener('DOMContentLoaded', function () {
     third_installment: "3rd installment",
     annual_total: "ANNUAL TOTAL",
     conditions_title: "Admission requirements",
-    birth_certificate_req_desc: "Required civil status document for any registration.",
+    birth_certificate_req_desc: "Civil status document required for admission.",
     vaccination_record_req_desc: "To guarantee the health safety of all students.",
-    paper_req_desc: "To bring when submitting the registration file.",
+    paper_req_desc: "To bring when submitting the admission file.",
     folder_req_desc: "Required for students in Level II and Level III.",
     binder_req_desc: "Required for students in Kindergarten and Level I.",
     financial_advantages_title: "Discounts & financial benefits",
@@ -471,61 +414,10 @@ document.addEventListener('DOMContentLoaded', function () {
     early_discount_desc: "<strong>10% discount</strong> on the total for any payment made before August 30, 2024.",
     free_uniform_title: "Free uniform",
     free_uniform_desc: "<strong>School uniform is offered</strong> free of charge to all enrolled students.",
-    fees_cta_question: "Questions about fees or registration?",
-    fees_cta_inscription_button: "Register now",
+    fees_cta_question: "Questions about the fees?",
     fees_cta_email_button: "Write to us",
     fees_cta_phone_button: "(+237) 655 936 211",
 
-    // Inscription page
-    inscription: "Registration",
-    inscription_hero_badge: "New registration",
-    inscription_title: "Student registration",
-    inscription_page_label: "Registration",
-    inscription_form_badge: "Registration form",
-    inscription_form_heading: "Register your child",
-    inscription_form_desc: "Fill out this form to register your child. Fields marked * are required.",
-    inscription_step1_title: "Student information",
-    inscription_label_nom: "Student's last name *",
-    inscription_placeholder_nom: "Ex: MOUKOUOP",
-    inscription_label_prenom: "Student's first name *",
-    inscription_placeholder_prenom: "Ex: Jean",
-    inscription_label_dob: "Date of birth *",
-    inscription_label_sexe: "Gender *",
-    inscription_sexe_default: "Select gender",
-    inscription_sexe_m: "Male",
-    inscription_sexe_f: "Female",
-    inscription_label_classe: "Desired class *",
-    inscription_classe_default: "Select a class",
-    inscription_group_maternelle: "Kindergarten",
-    inscription_group_primaire: "Primary",
-    inscription_classe_mb: "Bilingual Kindergarten",
-    inscription_classe_sil: "SIL (Starter Infant Level)",
-    inscription_classe_ps: "Petite Section",
-    inscription_classe_ms: "Moyenne Section",
-    inscription_classe_gs: "Grande Section",
-    inscription_classe_eb: "Bilingual Awakening",
-    inscription_classe_sil_ce2: "SIL to CE II",
-    inscription_classe_cm1: "CM1",
-    inscription_classe_cm2: "CM2",
-    inscription_classe_pb: "Bilingual Primary",
-    inscription_classe_cep: "CEP",
-    inscription_classe_fslc: "FSLC",
-    inscription_step2_title: "Parent/Guardian information",
-    inscription_label_parent: "Parent/Guardian full name *",
-    inscription_placeholder_parent: "Ex: MOUKOUOP Marie",
-    inscription_label_phone: "Phone *",
-    inscription_placeholder_phone: "Ex: +237 6XX XXX XXX",
-    inscription_label_email: "Email address *",
-    inscription_placeholder_email: "Ex: parent@gmail.com",
-    inscription_label_adresse: "Residence address *",
-    inscription_placeholder_adresse: "Ex: Carrefour Ekoumdoum, Yaoundé",
-    inscription_step3_title: "Confirmation",
-    inscription_conditions_title: "Admission requirements",
-    inscription_confirm_text: "By submitting this form, you confirm that you have read the admission requirements. An administrator will contact you to finalize the registration.",
-    inscription_btn_prev: "Previous",
-    inscription_btn_next: "Next",
-    inscription_btn_submit: "Submit registration",
-    
     // Divers
     years_excellence: "years of excellence"
   }};
@@ -709,8 +601,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (has('frais', 'cout', 'prix', 'tarif', 'paiement', 'fee', 'cost', 'price', 'tuition', 'payment')) {
         return {
           text: language === 'en'
-            ? 'The fees page lists registration fees and payment arrangements. Its published information refers to the 2024–2025 school year, so please contact the school to confirm current rates.'
-            : 'La page des frais présente les frais d’inscription et les modalités de paiement. Les informations publiées concernent l’année scolaire 2024–2025 ; contactez l’école pour confirmer les tarifs actuels.',
+            ? 'The fees page lists one-time admission fees and payment arrangements. Its published information refers to the 2024–2025 school year, so please contact the school to confirm current rates.'
+            : 'La page des frais présente les frais d’admission à payer une seule fois et les modalités de paiement. Les informations publiées concernent l’année scolaire 2024–2025 ; contactez l’école pour confirmer les tarifs actuels.',
           link: { href: 'frais.html', label: t.chat_link_fees }
         };
       }
@@ -718,9 +610,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (has('inscription', 'inscrire', 'admission', 'dossier', 'enroll', 'enrollment', 'register', 'registration', 'admission')) {
         return {
           text: language === 'en'
-            ? 'The school has bilingual kindergarten and primary sections. The enrollment page lists the application details and lets you submit a request online.'
-            : 'L’établissement propose des sections maternelle et primaire bilingues. La page d’inscription présente les informations à fournir et permet de soumettre une demande en ligne.',
-          link: { href: 'inscription.html', label: t.chat_link_registration }
+            ? 'For information about admission steps and required documents, contact the school at franckleprince15@gmail.com or (+237) 655 936 211 / (+237) 695 413 438.'
+            : 'Pour connaître les démarches d’admission et les pièces à fournir, contactez l’école à franckleprince15@gmail.com ou au (+237) 655 936 211 / (+237) 695 413 438.',
+          link: { href: 'mailto:franckleprince15@gmail.com', label: t.chat_link_contact }
         };
       }
 

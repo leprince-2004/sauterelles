@@ -1,0 +1,9 @@
+admin/
+backup/
+database/
+deploy/
+php/
+**/*.php
+**/*.sql
+BACKUP_GUIDE.md
+**/BACKUP_GUIDE.md
